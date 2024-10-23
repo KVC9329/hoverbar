@@ -1,0 +1,43 @@
+.triggerDiv {
+  position: relative;
+  display: inline-block;
+}
+
+.hoverDiv {
+  width: 800px;
+  position: absolute;
+  top: 100%;
+  right: 30px;
+  background-color: tranparent;
+  padding: 50px;
+/*   border: 1px solid #ccc; */
+  /* Start hidden and off to the left */
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.8s ease, transform 0.3s ease; /* Animation properties */
+}
+
+.triggerDiv:hover .hoverDiv {
+  opacity: 1; /* Fade in */
+  transform: translateX(100%); /* Slide from left to right */
+}
+
+.triggerDiv:not(:hover) .hoverDiv {
+  transform: translateX(0); /* Slide to right when hover is removed */
+  opacity: 0; /* Fade out */
+}
+
+.smallDiv {
+  background-color: coral;
+  width: 150px;
+  height: 20px;
+  padding: 50px 50px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.smallDiv:hover {
+  background-color: blue;
+  transition: opacity 1s ease, transform 1s ease; 
+}
